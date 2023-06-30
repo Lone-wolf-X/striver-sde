@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+void sortColors(int* nums, int numsSize){
+int n = numsSize;
+int count0 = 0;
+int count1 = 0;
+int count2 = 0;
+
+for(int i = 0; i<n; i++)
+{
+    if(nums[i] == 0)
+        count0++;
+    if(nums[i] == 1)
+        count1++;
+    if(nums[i] == 2)
+        count2++;
+}
+for(int i =0; i<count0; i++)
+{
+    nums[i] = 0;
+}
+for(int i = count0; i<(count0 + count1); i++)
+{
+    nums[i] = 1;
+}
+for(int i =(count0 +count1); i<(count0+count1+count2); i++)
+{
+    nums[i] = 2;
+}
+}
+int main()
+{
+  int n = 6;
+  int arr[n] = {2,0,2,1,1,0};
+  sortColours(arr , n);
+  return 0;
+}
